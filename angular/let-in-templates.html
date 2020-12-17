@@ -1,0 +1,12 @@
+<!-- https://stackoverflow.com/questions/42978082/what-is-let-in-angular-2-templates -->
+
+
+<ng-template #myTemplate let-col let-foo="bar">
+    <div>{{col}}</div>
+    <div>{{foo}}</div>
+</ng-template>
+
+<!-- render above template with a custom context -->
+<ng-template [ngTemplateOutlet]="myTemplate"
+            [ngTemplateOutletContext]="{$implicit: 'some col value', bar: 'some bar value'}"
+></ng-template>
